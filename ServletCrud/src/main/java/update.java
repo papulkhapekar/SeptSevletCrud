@@ -86,6 +86,7 @@ public class update extends HttpServlet {
 				{
 					pw.print("fail to update data");
 				}
+				response.sendRedirect("showData");
 		}
 		catch(Exception e)
 		{

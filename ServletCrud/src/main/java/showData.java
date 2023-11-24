@@ -38,7 +38,7 @@ public class showData extends HttpServlet {
 			
 		pw.print("<!doctype html>");
 		pw.print("<html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css\" integrity=\"sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N\" crossorigin=\"anonymous\"><title>Hello, world!</title></head><body>");
-		pw.print("<div class=\"container\">");   
+//		pw.print("<div class=\"container\">");   
 		pw.print("<h1>Show Data</h1>");
 		pw.print("<table class=\"table table-bordered\">");
 	      pw.print("<thead>");
@@ -52,6 +52,8 @@ public class showData extends HttpServlet {
 	          pw.print("<th scope=\"col\">City</th>");
 	          pw.print("<th scope=\"col\">Pincode</th>");
 	          pw.print("<th scope=\"col\">Gender</th>");
+	          pw.print("<th scope=\"col\">Edit</th>");
+	          pw.print("<th scope=\"col\">Delete</th>");
 	        pw.print("</tr>");
 	      pw.print("</thead>");
 	      pw.print("<tbody>");
@@ -77,11 +79,13 @@ public class showData extends HttpServlet {
 	        	  data = "Female";
 	          }
 	          pw.print("<td>"+data+"</td>");
+	          pw.print("<td><a href='editdata?id="+rs.getInt(1)+"'>Edit</a></td>");
+	          pw.print("<td><a href='deletedata'>Delete</a></td>");
 	        pw.print("</tr>");
 	      }
 	      pw.print("</tbody>");
 	    pw.print("</table>");
-		pw.print("</div>");
+//		pw.print("</div>");
 		pw.print("</body></html>");
 		}
 		catch(Exception e)
